@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<title>简单的计算器</title>
+		<meta charset="UTF-8">
+		<script src="js/jquery-1.10.2.min.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('#var1').focus();
+				$('#eql').click(function(){
+					v1 = $('#var1').val();
+					v2 = $('#var2').val();
+					op = $('#operator').val();
+					console.log(v1 + op + v2);
+					result = eval(v1 + op + v2);
+					$('#result').val(result);
+				});
+			});
+		</script>
+		<style>
+			body {
+				background-color: #eee;
+			}
+			.main {
+				margin-top: 20px;
+				padding-top: 200px;
+				padding-left: 5em;
+				border: 1px solid #ccc;
+				height: 500px;
+				background-color: white;
+				border-radius: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h2>简单的计算器</h2>
+				<div class="row main">
+					<div class="col-md-2"><input id="var1" /></div>
+					<div class="col-md-1">
+						<select id="operator" class="form-control">
+							<option value="+">+</option>
+							<option value="-">-</option>
+							<option value="*">*</option>
+							<option value="/">/</option>
+							<option value="%">%</option>
+						</select>
+					</div>
+					<div class="col-md-2"><input id="var2" /></div>
+					<div class="col-md-1"><input type="button" class="btn btn-primary" value="="/ id='eql'></div>
+					<div class="col-md-2"><input id="result" /></div>
+				</div>
+		</div>
+	</body>
+</html>
